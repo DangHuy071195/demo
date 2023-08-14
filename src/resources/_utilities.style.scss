@@ -1,0 +1,46 @@
+@for $i from 1 through 60 {
+	.mg-r-#{$i} {
+		margin-right: #{$i}px;
+	}
+}
+@for $i from 1 through 60 {
+	.mg-l-#{$i} {
+		margin-left: #{$i}px;
+	}
+}
+@for $i from 1 through 60 {
+	.px-#{$i} {
+		padding-left: #{$i}px;
+		padding-right: #{$i}px;
+	}
+}
+
+.text-primary {
+	color: #4361ee;
+}
+
+.text {
+	&-md {
+		font-weight: 500;
+	}
+	&-base {
+		font-size: 1.2rem;
+		color: #000;
+	}
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+.rad-none {
+	border-radius: 0 !important;
+}
+
+.bd-r-none *,
+.bd-r-none {
+	border-right: none !important;
+}
+
+.w-100pc {
+	width: 100%;
+}

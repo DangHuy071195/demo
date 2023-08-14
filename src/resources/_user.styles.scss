@@ -1,0 +1,126 @@
+.users {
+	background-color: white;
+	&-filter {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		padding: 2.4rem;
+		background-color: white;
+		box-shadow: -3.062930107116699px -3.062930107116699px 7.657325744628906px 0px rgba(0, 0, 0, 0.05),
+			3.062930107116699px 3.062930107116699px 7.657325744628906px 0px rgba(0, 0, 0, 0.05);
+		button {
+			max-width: 20rem;
+			padding: 0.5rem 1.2rem;
+		}
+		&__form {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			input {
+				flex-grow: 0;
+				max-width: 30rem;
+			}
+
+			.ant-select-selector {
+				border-radius: 0 !important;
+				.ant-select-selection-placeholder {
+					color: #000;
+					font-weight: 600;
+					font-size: 12px;
+				}
+			}
+			&--selections {
+				flex-grow: 1;
+				display: flex;
+				justify-content: flex-end;
+			}
+		}
+	}
+	&-list {
+		table thead {
+			th,
+			th * {
+				white-space: nowrap;
+				background-color: #f2f9ff !important;
+				color: #000;
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
+
+.ant-table-pagination.ant-pagination {
+	width: 100%;
+	display: flex;
+}
+.ant-pagination-total-text {
+	margin-right: auto !important;
+}
+
+.ant-pagination .ant-pagination-item {
+	border-radius: 50% !important;
+	margin-right: 0.3rem !important;
+	&:not(.ant-pagination-item-active) {
+		background-color: #e0e6ed !important;
+		a {
+			color: #000;
+		}
+	}
+	background-color: #4361ee !important;
+	border: none;
+	a {
+		color: white;
+		font-size: 1rem;
+	}
+}
+
+.ant-pagination-item-link {
+	border-radius: 50% !important;
+	background-color: #e0e6ed !important;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+	background-color: white;
+	&::after {
+		border-color: #4361ee;
+	}
+}
+
+.ant-pagination {
+	padding: 0 1.8rem;
+}
+.filter {
+	&-date {
+		display: flex;
+		flex-direction: column;
+		width: 250px;
+		padding: 0 1rem;
+		gap: 16px;
+		border-radius: 5px;
+	}
+	&-customer {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+		width: 250px;
+		padding: 0 1rem;
+		border-radius: 5px;
+
+		.ant-checkbox-group {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			font-weight: 500;
+			font-size: 13px;
+		}
+	}
+}
+
+.customer-stag {
+	border-radius: 25.047px;
+	border: 1.252px solid rgba(0, 122, 255, 0.8);
+	background: #d0e9ff;
+}
+
+.mg-0 {
+	margin: 0;
+}
