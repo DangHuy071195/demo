@@ -16,7 +16,7 @@ const style = {
 	alignItems: 'center',
 }
 
-export const Card = ({ id, text, index, moveCard }) => {
+export const Card = ({ id, text, index, moveCard, onRemove }) => {
 	const ref = useRef(null)
 	const [{ handlerId }, drop] = useDrop({
 		accept: 'card',
@@ -89,7 +89,7 @@ export const Card = ({ id, text, index, moveCard }) => {
 	return (
 		<div ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
 			<span>{text}</span>
-			<i className='fa-solid fa-xmark cursor-pointer'></i>
+			<i className='fa-solid fa-xmark cursor-pointer' onClick={() => onRemove(id)}></i>
 		</div>
 	)
 }

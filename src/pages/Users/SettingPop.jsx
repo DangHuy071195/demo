@@ -7,7 +7,7 @@ import update from 'immutability-helper'
 
 const CheckboxGroup = Checkbox.Group
 
-const SettingPop = ({ open, columns, setOpen, columnsChecked, setColumnsChecked }) => {
+const SettingPop = ({ open, columns, setOpen, columnsChecked, setColumnsChecked, onRemove }) => {
 	const onChange = (list) => {
 		console.log(list)
 		setColumnsChecked(columnsSetting.filter((col) => list.includes(col.key)))
@@ -31,7 +31,16 @@ const SettingPop = ({ open, columns, setOpen, columnsChecked, setColumnsChecked 
 
 	const renderCard = useCallback(
 		(card, index) => {
-			return <Card key={card.key} index={index} id={card.key} text={card.title} moveCard={moveCard} />
+			return (
+				<Card
+					key={card.key}
+					index={index}
+					id={card.key}
+					text={card.title}
+					onRemove={(val) => onRemove(val)}
+					moveCard={moveCard}
+				/>
+			)
 		},
 		[moveCard]
 	)

@@ -180,6 +180,10 @@ const Users = () => {
 		setColumnsRendered(columnsRendered)
 	}, [columnsChecked])
 
+	const onRemove = (key) => {
+		setColumnsChecked((prevState) => prevState.filter((col) => col.key !== key))
+	}
+
 	return (
 		<MainLayout>
 			<div className='users'>
@@ -200,6 +204,7 @@ const Users = () => {
 					setColumnsChecked={(val) => setColumnsChecked(val)}
 					open={open}
 					setOpen={(val) => setOpen(val)}
+					onRemove={(key) => onRemove(key)}
 				/>
 			</DndProvider>
 		</MainLayout>
