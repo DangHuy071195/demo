@@ -19,132 +19,133 @@ const Users = () => {
 	const [columnsRendered, setColumnsRendered] = useState([])
 
 	const [open, setOpen] = useState(false)
-	const columnsAvailableChange = [
-		{
-			title: 'Mã khách hàng',
-			dataIndex: 'code',
-			key: 'code',
-			order: 2,
-			render: (code) => <span className='text-md text-base'>{code}</span>,
-		},
-		{
-			title: 'Tên khách hàng',
-			dataIndex: 'username',
-			key: 'username',
-			order: 3,
+	const columnsAvailableChange = useMemo(() => {
+		return [
+			{
+				title: 'Mã khách hàng',
+				dataIndex: 'code',
+				key: 'code',
+				order: 2,
+				render: (code) => <span className='text-md text-base'>{code}</span>,
+			},
+			{
+				title: 'Tên khách hàng',
+				dataIndex: 'username',
+				key: 'username',
+				order: 3,
 
-			render: (username) => (
-				<a href='#' className='text-primary'>
-					{username}
-				</a>
-			),
-		},
-		{
-			title: 'Số điện thoại',
-			dataIndex: 'phone',
-			key: 'phone',
-			align: 'right',
-			render: (phone) => <span className='text-md text-base'>{phone}</span>,
-		},
-		{
-			title: 'Nhóm khách hàng',
-			dataIndex: 'group',
-			key: 'group',
-			align: 'right',
-			render: (group) => (
-				<span className='text-md text-base'>
-					{group === KHACH_LE ? 'Khách lẻ' : group === DAI_LY ? 'Đại lý' : 'Đại lý cấp 1'}
-				</span>
-			),
-		},
-		{
-			title: 'Nợ hiện tại',
-			dataIndex: 'venus',
-			key: 'venus',
-			align: 'right',
-			render: (venus) => <span className='text-md text-base'>{venus}</span>,
-		},
-		{
-			title: 'Tổng chi tiêu',
-			dataIndex: 'totalPay',
-			key: 'totalPay',
-			align: 'right',
-			render: (totalPay) => <span className='text-md text-base'>{totalPay}</span>,
-		},
-		{
-			title: 'Lợi nhuận',
-			dataIndex: 'profit',
-			key: 'profit',
-			align: 'right',
-			render: (profit) => <span className='text-md text-base'>{profit}</span>,
-		},
-		{
-			title: 'SL đơn hàng',
-			dataIndex: 'totalCount',
-			key: 'totalCount',
-			align: 'right',
-			render: (totalCount) => <span className='text-md text-base'>{totalCount}</span>,
-		},
-		{
-			title: 'Ngày tạo',
-			dataIndex: 'createdAt',
-			key: 'createdAt',
-			align: 'right',
-			render: (createdAt) => <span className='text-md text-base'>{createdAt}</span>,
-		},
-		{
-			title: 'Ngày cập nhật',
-			dataIndex: 'modifiedAt',
-			key: 'modifiedAt',
-			align: 'right',
-			render: (modifiedAt) => <span className='text-md text-base'>{modifiedAt}</span>,
-		},
-		{
-			title: 'Trạng thái',
-			dataIndex: 'status',
-			align: 'right',
-			key: 'status',
-			render: (status) => (
-				<span className='text-base'>{status === STATUS_ON ? 'Đang hoạt động' : 'Ngừng hoạt động'}</span>
-			),
-		},
-		{
-			title: 'Địa chỉ',
-			dataIndex: 'gender',
-			key: 'address',
-			align: 'right',
-			render: (address) => <span className='text-md text-base'>{address}</span>,
-		},
-		{
-			title: 'Ngày cuối mua hàng',
-			dataIndex: 'lastTimeBuy',
-			key: 'lastTimeBuy',
-			align: 'right',
-			render: (lastTimeBuy) => <span className='text-md text-base'>{lastTimeBuy}</span>,
-		},
-		{
-			title: 'Giới tính',
-			dataIndex: 'gender',
-			key: 'gender',
-			align: 'right',
-			render: (gender) => <span className='text-md text-base'>{gender}</span>,
-		},
-		{
-			title: 'SL phiếu sửa chữa',
-			dataIndex: 'gender',
-			key: 'repair',
-			align: 'right',
-			render: (repair) => <span className='text-md text-base'>{repair}</span>,
-		},
-		{
-			title: 'Email',
-			dataIndex: 'email',
-			key: 'email',
-			align: 'right',
-			render: (email) => <span className='text-md text-base'>{email}</span>,
-		},
-	]
-
+				render: (username) => (
+					<a href='#' className='text-primary'>
+						{username}
+					</a>
+				),
+			},
+			{
+				title: 'Số điện thoại',
+				dataIndex: 'phone',
+				key: 'phone',
+				align: 'right',
+				render: (phone) => <span className='text-md text-base'>{phone}</span>,
+			},
+			{
+				title: 'Nhóm khách hàng',
+				dataIndex: 'group',
+				key: 'group',
+				align: 'right',
+				render: (group) => (
+					<span className='text-md text-base'>
+						{group === KHACH_LE ? 'Khách lẻ' : group === DAI_LY ? 'Đại lý' : 'Đại lý cấp 1'}
+					</span>
+				),
+			},
+			{
+				title: 'Nợ hiện tại',
+				dataIndex: 'venus',
+				key: 'venus',
+				align: 'right',
+				render: (venus) => <span className='text-md text-base'>{venus}</span>,
+			},
+			{
+				title: 'Tổng chi tiêu',
+				dataIndex: 'totalPay',
+				key: 'totalPay',
+				align: 'right',
+				render: (totalPay) => <span className='text-md text-base'>{totalPay}</span>,
+			},
+			{
+				title: 'Lợi nhuận',
+				dataIndex: 'profit',
+				key: 'profit',
+				align: 'right',
+				render: (profit) => <span className='text-md text-base'>{profit}</span>,
+			},
+			{
+				title: 'SL đơn hàng',
+				dataIndex: 'totalCount',
+				key: 'totalCount',
+				align: 'right',
+				render: (totalCount) => <span className='text-md text-base'>{totalCount}</span>,
+			},
+			{
+				title: 'Ngày tạo',
+				dataIndex: 'createdAt',
+				key: 'createdAt',
+				align: 'right',
+				render: (createdAt) => <span className='text-md text-base'>{createdAt}</span>,
+			},
+			{
+				title: 'Ngày cập nhật',
+				dataIndex: 'modifiedAt',
+				key: 'modifiedAt',
+				align: 'right',
+				render: (modifiedAt) => <span className='text-md text-base'>{modifiedAt}</span>,
+			},
+			{
+				title: 'Trạng thái',
+				dataIndex: 'status',
+				align: 'right',
+				key: 'status',
+				render: (status) => (
+					<span className='text-base'>{status === STATUS_ON ? 'Đang hoạt động' : 'Ngừng hoạt động'}</span>
+				),
+			},
+			{
+				title: 'Địa chỉ',
+				dataIndex: 'address',
+				key: 'address',
+				align: 'right',
+				render: (address) => <span className='text-md text-base'>{address}</span>,
+			},
+			{
+				title: 'Ngày cuối mua hàng',
+				dataIndex: 'lastTimeBuy',
+				key: 'lastTimeBuy',
+				align: 'right',
+				render: (lastTimeBuy) => <span className='text-md text-base'>{lastTimeBuy}</span>,
+			},
+			{
+				title: 'Giới tính',
+				dataIndex: 'gender',
+				key: 'gender',
+				align: 'right',
+				render: (gender) => <span className='text-md text-base'>{gender}</span>,
+			},
+			{
+				title: 'SL phiếu sửa chữa',
+				dataIndex: 'repair',
+				key: 'repair',
+				align: 'right',
+				render: (repair) => <span className='text-md text-base'>{repair}</span>,
+			},
+			{
+				title: 'Email',
+				dataIndex: 'email',
+				key: 'email',
+				align: 'right',
+				render: (email) => <span className='text-md text-base'>{email}</span>,
+			},
+		]
+	}, [])
 	const columns = [
 		{
 			title: <Avatar src={SettingImg} size={18} className='cursor-pointer' onClick={() => setOpen(true)} />,
@@ -178,7 +179,7 @@ const Users = () => {
 			}
 		}
 		setColumnsRendered(columnsRendered)
-	}, [columnsChecked])
+	}, [columnsAvailableChange, columnsChecked])
 
 	const onRemove = (key) => {
 		setColumnsChecked((prevState) => prevState.filter((col) => col.key !== key))
@@ -196,6 +197,7 @@ const Users = () => {
 					group={group}
 					setGroup={(val) => setGroup(val)}
 				/>
+				{console.log('columsRendered', columnsRendered)}
 				<List data={dataFiltered} columns={[...columns, ...columnsRendered]} />
 			</div>
 			<DndProvider backend={HTML5Backend}>

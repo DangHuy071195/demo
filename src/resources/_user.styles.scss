@@ -169,6 +169,7 @@
 .setting {
 	.ant-modal-content {
 		padding: 0;
+
 		.ant-modal-title {
 			background-color: #f2f9ff;
 			padding: 1.4rem 2.4rem;
@@ -184,10 +185,17 @@
 
 		.ant-modal-body {
 			padding: 3.6rem 2.4rem;
+			padding-bottom: 0;
 			display: flex;
 			flex-wrap: nowrap;
 			gap: 1.8rem;
 			justify-content: space-between;
+			height: 70vh;
+			overflow-y: scroll;
+			border-radius: 6px;
+		}
+		.ant-modal-footer {
+			padding: 1.4rem 2.4rem;
 		}
 	}
 	&-columns {
