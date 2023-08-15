@@ -38,9 +38,24 @@
 
 .bd-r-none *,
 .bd-r-none {
-	border-right: none !important;
+	border-left: none !important;
 }
 
 .w-100pc {
 	width: 100%;
+}
+.border-left-base {
+	border-left: 1px solid #d9d9d9;
+}
+
+.flex {
+	display: flex;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.align-items-center {
+	align-items: center;
 }

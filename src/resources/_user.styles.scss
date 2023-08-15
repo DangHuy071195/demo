@@ -47,6 +47,40 @@
 			}
 		}
 	}
+
+	@media screen and (max-width: 992px) {
+		&-filter {
+			&__form {
+				flex-wrap: wrap;
+				gap: 1.6rem;
+				&--selections {
+					justify-content: flex-start;
+					gap: 1.4rem;
+					.bd-r-none {
+						border: 1px solid #d9d9d9 !important;
+						.ant-select-selector {
+							border: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 576px) {
+		&-filter {
+			&__form {
+				flex-wrap: wrap;
+				gap: 1.6rem;
+				align-items: center;
+				&--selections {
+					button,
+					.ant-select {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 }
 
 .ant-table-pagination.ant-pagination {

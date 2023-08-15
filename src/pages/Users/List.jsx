@@ -78,7 +78,7 @@ const List = ({ data, columns }) => {
 		<Table
 			size='small'
 			className='users-list'
-			scroll={{ x: true }}
+			scroll={{ x: 576 }}
 			rowKey={(record) => record.code}
 			rowSelection={rowSelection}
 			columns={columns}

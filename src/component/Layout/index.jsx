@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Image, Layout, Menu, Row } from 'antd'
+import React, { useEffect, useRef, useState } from 'react'
+import { Col, Image, Layout, Menu, Row } from 'antd'
 import Bag from '../../resources/images/bag.svg'
 import Pencil from '../../resources/images/pencil.svg'
 import Chat from '../../resources/images/chat.png'
@@ -12,11 +12,14 @@ import Profile from '../../resources/images/profile.svg'
 import Top from '../../resources/images/top.svg'
 import MainHeader from './Header'
 import { UserOutlined } from '@ant-design/icons'
+import useWindowSize from '../../hooks/resize'
 
 const { Sider, Content, Footer } = Layout
 
 const MainLayout = (props) => {
 	const [collapsed, setCollapsed] = useState(false)
+	const [width, height] = useWindowSize()
+
 	const items = [
 		{
 			key: 'bag',
@@ -24,6 +27,12 @@ const MainLayout = (props) => {
 			label: 'Danh sách khách hàng',
 		},
 	]
+
+	useEffect(() => {
+		if (width < 576) {
+			setCollapsed(true)
+		}
+	}, [width])
 	return (
 		<Layout style={{ minHeight: '100vh' }}>
 			<Sider
@@ -40,10 +49,10 @@ const MainLayout = (props) => {
 				<MainHeader collapsed={collapsed} setCollapsed={(val) => setCollapsed(val)} />
 				<Content className='content'>{props.children}</Content>
 				<Footer className='px-28'>
-					<Row justify={'space-between'} align={'middle'}>
-						<div className='footer'>© 2023. tranlinhmobile</div>
+					<div className='flex justify-between'>
+						<span className='footer'>© 2023. tranlinhmobile</span>
 						<Image src={Top} className='cursor-pointer' preview={false} />
-					</Row>
+					</div>
 				</Footer>
 			</Layout>
 		</Layout>

@@ -52,7 +52,7 @@ const Filter = ({ status, setStatus, setDateFilter, group, setGroup }) => {
 
 			<div className='users-filter__form'>
 				<Input placeholder='Tìm kiếm theo mã khách hàng, tên khách hàng và số điện thoại' />
-				<Row className='users-filter__form--selections' wrap={false}>
+				<Row className='users-filter__form--selections' wrap={true}>
 					{/* <Select
 						className='rad-none bd-r-none'
 						allowClear
@@ -96,7 +96,7 @@ const Filter = ({ status, setStatus, setDateFilter, group, setGroup }) => {
 								</div>
 							)
 						}}>
-						<Button className='rad-none bd-r-none'>
+						<Button className='rad-none  border-left-base flex justify-between align-items-center'>
 							Nhóm KH <i className='fa-solid fa-angle-down text-base mg-l-4'></i>
 						</Button>
 					</Popover>
@@ -176,12 +176,12 @@ const Filter = ({ status, setStatus, setDateFilter, group, setGroup }) => {
 							)
 						}}
 						trigger='click'>
-						<Button className='rad-none bd-r-none'>
+						<Button className='rad-none bd-r-none flex justify-between align-items-center'>
 							Ngày tạo <i className='fa-solid fa-angle-down text-base mg-l-4'></i>
 						</Button>
 					</Popover>
 					<Select
-						className='rad-none '
+						className='rad-none  bd-r-none'
 						allowClear
 						style={{ maxWidth: 200 }}
 						placeholder='Bộ lọc khác'
